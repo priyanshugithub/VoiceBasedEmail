@@ -1,0 +1,27 @@
+    <div class="container">
+            <div *ngIf="showMessage" class="alert alert-danger alert-dismissible fade in">
+                    <strong>Warning!</strong> {{errMessage}}
+                  </div>
+        <div class="card card-container">
+
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            
+            <form class="form-signin" [formGroup]="myForm" (ngSubmit)="login(myForm.value)" method="post">
+
+                <span id="reauth-email" class="reauth-email"></span>
+
+                <input type="email" id="inputEmail" class="form-control" formControlName="email" placeholder="Email address" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" formControlName="password" placeholder="Password" required>
+
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" >Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="button" (click)="openSignup()">SignUp</button>
+                
+            
+               
+            </form><!-- /form -->
+            <!--<a href="/" class="forgot-password">
+                Forgot the password?
+            </a> -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
